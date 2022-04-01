@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+/* * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+} */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+	background: url("./img/Sky.jpg") 50% 50%/cover no-repeat;;
+	overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px){
+    h1 {
+        font-size: 30px;
+        top: 40%;
+    }  
+}
+
+@media screen and (min-width: 769px){
+    h1 {
+        font-size: 40px;
+    }
+}
+
+#menu {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1000px){
+    #aboutGame p {
+        font-size: 12px;
+        padding: 0px 10px; 
+    }   
+}
+ 
+#showRecords {
+    color: #ffffff;
+    text-align: center;
+    display: none;
+    position: fixed;
+    border-radius: 10%;
+    border: 2px solid yellow;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(54,25,31,1) 100%);
+    width: 28%;
+    height: 50%;
+    margin: 5px 0px;
+    z-index: 3;
+    animation: fadein 1s ease-in alternate;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+#closeRecords {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    font-size: 15px;
+    animation: fadein 1s ease-in alternate;
+}  
+
+
+#aboutGame {
+    font-size: 20px;
+    padding: 0px 5px;
+    text-align: center;
+    background-color:black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: all .5s linear;
+    transform: translateX(-100%);
+   
+}
+
+#aboutGame.--show {
+    transform: translateX(0%);
+}
+
+.closeAbout{
+    margin-bottom: 10px;
+}
+
+h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 30%;
+    color: #ffffff;
+    animation: pulse 6s infinite;
+    
+   
+}
+
+@keyframes pulse{
+    0%{
+      opacity: 1;
+    }
+    50%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+}
+
+ p {
+     color: #ffffff;
+ }
+
+.gameMenu{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+nav {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: width 0.6s linear;
+    overflow-x: hidden; 
+}
+
+@media screen and (max-width:610px) {
+    nav.active {
+        width: 320px;
+    }
+}
+
+@media screen and (min-width:611px) {
+    nav.active{
+        width: 450px;
+    }
+
+}
+nav.active {
+   margin: 0px 5px;
+} 
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    width: 0;
+    transition: width 0.6s linear;
+
+}
+
+nav.active ul {
+width: 100%;
+}
+
+nav ul li {
+    transform: rotateY(0deg);
+    opacity: 0;
+    transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+nav.active ul li {
+    opacity: 1;
+    transform: rotateY(360deg);
+}
+
+nav ul a { 
+    position: relative;
+    color: black;
+    text-decoration: none;
+    margin: 0 30px;
+
+}
+
+@media screen and (max-width: 900px) {
+    nav ul a {
+        margin: 0 12px;
+    } 
+}
+
+
+.icon {
+background-color: #ffffff;
+border: 0;
+cursor: pointer;
+padding: 0;
+position: relative;
+height: 30px;
+width: 30px;
+}
+
+.icon:focus {
+    outline: 0;
+}
+
+.icon .line {
+    background-color: blue;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+    top: auto;
+    bottom: 10px;
+
+}
+
+nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+} 
+
+nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+} 
+
+#myGame{
+    display: none;
+    animation: fadein 2s ease-in alternate;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.arkanoid {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    color: #004b7a;
+    font-family: "Germania One";
+    font-weight: bold;
+}
+
+*{
+    font-family: "Germania One";
+}
+
+.game {
+    position: relative;
+}
+
+
+
+#pause {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 5px;
+}
+
+
+#sound{
+    width: 30px;
+    height : 30px;
+    cursor: pointer;
+    position: absolute;
+    bottom : 20px;
+    left : 5px;
+}
+#gameover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+#youwon{
+    width: 100px;
+    position: absolute;
+    top : 35%;
+    left : 43%;
+    display: none;
+}
+#youlose{
+    width:100%;
+    position: absolute;
+    top: 20%;
+    left : 0%;
+    display: none;
+}
+#restart{
+    position: absolute;
+    top: 56%;
+    left : 43%;
+    cursor: pointer;
+    font-size: 1.24em;
+    color : #FFF;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Germania+One">
+    <link rel="stylesheet" href="./style.css"> 
+    <title>ARKANOID</title> 
+</head>
+<body>
+    <!-- menu -->
+
+    <div id="menu">
+        <div id="showRecords"><p id="allRecords"></p><button id="closeRecords">CLOSE</button></div>
+        <div id="aboutGame">
+            <p>НЕМНОГО ИСТОРИИ</p>
+            <p>
+                Классическая игра Arkanoid имеет богатую и многолетнюю историю. Со времен первой версии, которая зародила интерес у разработчиков к этому жанру, прошло несколько десятилетий. За это время сменилось множество игровых приставок, компьютеров и что самое главное целое поколение людей, но это не мешает оставаться Arkanoid’у очень популярной игрой и в наши дни, а все потому, что классика — бессмертна.
+                История этого жанра берет свои истоки в далеком 1958, когда физик Уильям Хигинботам собрал из разных радиодеталей устройство, которое позволяло играть в примитивный теннис на экране осциллографа. Физик, не осмыслив ценность своего изобретения, игру не запатентовал и разобрал ее спустя некоторое время. Потом в 1972 году компания Meganvox выпустила приставку Odyssey 1TL200. Используя приставку и телевизор можно было играть в уже немного более продвинутый теннис с более удобными джойстиками.
+                Чуть позже, небезызвестная и по сей день компания Atari выпустила игру Pong, которая взорвала рынок видеоигр и стала очень популярной. Через несколько лет после этого Atari нужна была еще одна «бомба», которая продавалась бы миллионными тиражами. Как вы думаете, к кому они обратились за этой новинкой? Это был наш любимый герой современности Стив Джобс, который в то время работал в Atari. Обратились-то они к Джобсу, но разработку вел его друг Стив Возняк, который в свою очередь в те времена работал на HP 
+                В итоге получилась игра Brakeout, которая стала хитом. Кстати, Brakeout уже выглядел, как привычный арканоид. Но несмотря на то, что Atari были первыми, официальным днем рождения арканоида является 1986 год, когда компания Taito выпустила видеоигру для автоматов — «Arkanoid». С этого момента люди и стали именовать все подобные игры арканоидами.
+            </p>
+            <p>КАК ИГРАТЬ</p>
+            <p>Управлять ракеткой можно мышкой, клавишами «лево» и «право» или используя тачскрин на мобильном телефоне. Чтобы начать игру, нужно перейти на страницу «ИГРАТЬ» и нажать на кнопку «play». Игру можно приостановить, нажав на кнопку «stop». Во время паузы мяч и ракетка замирают. Если же хотите закрыть игру и выйти в меню просто сделайте "swipe-top". Вот, в общем-то, и все. УДАЧИ!!!</p>
+            <button id="closeAbout">CLOSE</button>
+        </div>
+        <h1 id="help">Click on the hamburger icon</h1>
+        <div class="gameMenu">
+            <nav id="nav">
+                <ul>
+                    <li id="start"><a href="#myGame">Start</a></li>
+                    <li id="about"><a href="#aboutGame">About</a></li>
+                    <li id="records"><a href="#showRecords">Records</a></li>
+                </ul>
+                <button class="icon" id="toggle">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                </button>
+            </nav>
+           
+        </div>
+    </div>
+   
+    
+    <!--game-->
+    <div id="myGame">
+        <div class="arkanoid">Arkanoid</div> -->
+        <div class="game">
+            <div class="sound">
+                <img src="img/SOUND_ON.png" alt="" id="sound">
+            </div>
+            <div class="pause">
+                <img src="./img/play.png"  id="pause">
+            </div>
+            <div id="gameover">
+                <img src="img/youwon.png" alt="" id="youwon">
+                <img src="img/gameover.png" alt="" id="youlose">
+                <div id="restart">Play Again!</div>
+            </div>
+            <canvas id="breakout" width="500" height="600"></canvas>
+        </div>
+    </div>
+    <script src="http://fe.it-academy.by/JQ/jquery.js"></script> 
+    <script src="./menu.js"></script>
+    <script src="components.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
